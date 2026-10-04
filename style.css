@@ -1,0 +1,1244 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6fbfa;
+  color: #173b3a;
+  line-height: 1.6;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+  width: 100%;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5eeee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: #123f3d;
+}
+
+.logo span {
+  color: #159b8b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #456563;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #159b8b;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  min-height: 680px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at top right, #dff8f4, transparent 35%),
+    linear-gradient(135deg, #ffffff, #effaf8);
+}
+
+.hero-content {
+  max-width: 850px;
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 9px 17px;
+  border-radius: 30px;
+  background: #e3f7f3;
+  color: #087e72;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.08;
+  color: #123f3d;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  color: #159b8b;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: #607775;
+  font-size: 18px;
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-box {
+  max-width: 720px;
+  margin: 35px auto 18px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #d7e8e5;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(26, 99, 91, 0.09);
+}
+
+.search-icon {
+  padding: 0 14px;
+  font-size: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px 5px;
+  font-size: 16px;
+  color: #173b3a;
+}
+
+.search-box button {
+  border: none;
+  background: #159b8b;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 13px;
+  font-weight: 700;
+}
+
+.search-box button:hover {
+  background: #087e72;
+}
+
+/* ==========================================
+   SEARCH RESULTS
+========================================== */
+
+.search-result {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.search-card {
+  background: white;
+  border: 1px solid #dcecea;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 12px 30px rgba(25, 90, 84, 0.08);
+  animation: slideUp 0.3s ease;
+}
+
+.search-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-card-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #e6f8f5;
+  font-size: 25px;
+}
+
+.search-card h3 {
+  color: #123f3d;
+}
+
+.search-card p {
+  color: #708481;
+  font-size: 14px;
+}
+
+.search-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.detail-tag {
+  padding: 7px 11px;
+  background: #f0f8f7;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #28645e;
+}
+
+.navigate-btn {
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  padding: 13px;
+  border-radius: 11px;
+  background: #159b8b;
+  color: white;
+  font-weight: 700;
+}
+
+.navigate-btn:hover {
+  background: #087e72;
+}
+
+.no-result {
+  margin-top: 15px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #dcecea;
+  border-radius: 15px;
+  text-align: center;
+  color: #58706d;
+}
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.primary-btn {
+  background: #159b8b;
+  color: white;
+}
+
+.secondary-btn {
+  background: #fff0ed;
+  color: #c94d3e;
+}
+
+.primary-btn:hover {
+  background: #087e72;
+}
+
+/* ==========================================
+   SECTION COMMON
+========================================== */
+
+.how-section,
+.services-section {
+  padding: 90px 7%;
+  background: white;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-heading span,
+.navigation-header span,
+.map-heading span,
+.route-instruction-card span,
+.route-card-header span,
+.accessibility-content span,
+.lost-content span {
+  color: #159b8b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+  font-size: 38px;
+  color: #123f3d;
+  margin: 8px 0;
+}
+
+.section-heading p {
+  color: #6b7f7d;
+}
+
+/* ==========================================
+   HOW IT WORKS
+========================================== */
+
+.steps-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.info-step {
+  position: relative;
+  padding: 28px;
+  border: 1px solid #e0eeec;
+  border-radius: 20px;
+  background: #fbfefe;
+}
+
+.step-number {
+  color: #a3c5c1;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.step-icon {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+.info-step h3 {
+  color: #173f3c;
+}
+
+.info-step p {
+  color: #718481;
+  font-size: 14px;
+}
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.services-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  padding: 28px;
+  border: 1px solid #deecea;
+  border-radius: 20px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #8ed6cd;
+  box-shadow: 0 15px 30px rgba(26, 99, 91, 0.08);
+}
+
+.service-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  color: #173f3c;
+}
+
+.service-card p {
+  color: #718481;
+  font-size: 14px;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.accessibility-section {
+  padding: 55px 7%;
+  background: #eaf8f5;
+}
+
+.accessibility-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.accessibility-icon {
+  font-size: 40px;
+}
+
+.accessibility-content div:nth-child(2) {
+  flex: 1;
+}
+
+.accessibility-content h2 {
+  margin: 5px 0;
+  color: #173f3c;
+}
+
+.accessibility-content p {
+  color: #617572;
+}
+
+.accessibility-content button,
+.lost-content button {
+  border: none;
+  background: #159b8b;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 11px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   LOST SECTION
+========================================== */
+
+.lost-section {
+  padding: 55px 7%;
+  background: #ffffff;
+}
+
+.lost-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.lost-content h2 {
+  color: #173f3c;
+  margin: 5px 0;
+}
+
+.lost-content p {
+  color: #687b78;
+}
+
+/* ==========================================
+   NAVIGATION SCREEN
+========================================== */
+
+.navigation-screen {
+  display: none;
+  min-height: 100vh;
+  padding: 45px 7% 80px;
+  background:
+    radial-gradient(circle at top right, #dff8f4, transparent 30%), #f5fbfa;
+}
+
+/* ==========================================
+   NAVIGATION HEADER
+========================================== */
+
+.navigation-header {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navigation-header h2 {
+  color: #123f3d;
+  font-size: 32px;
+}
+
+.back-btn {
+  border: 1px solid #cfe3e0;
+  background: white;
+  color: #28645e;
+  padding: 11px 17px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   DESTINATION SUMMARY
+========================================== */
+
+.destination-summary {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border: 1px solid #dcecea;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(25, 90, 84, 0.07);
+}
+
+.destination-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #e5f8f4;
+  font-size: 27px;
+}
+
+.destination-summary h3 {
+  color: #173f3c;
+  font-size: 20px;
+}
+
+.destination-summary p {
+  color: #6b7d7a;
+  font-size: 14px;
+}
+
+.walking-time {
+  margin-left: auto;
+  text-align: right;
+}
+
+.walking-time span {
+  display: block;
+  color: #79908c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.walking-time strong {
+  color: #159b8b;
+  font-size: 23px;
+}
+
+/* ==========================================
+   HOSPITAL MAP SECTION
+========================================== */
+
+.hospital-map-section {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+}
+
+.map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.map-heading h2 {
+  color: #173f3c;
+  font-size: 27px;
+}
+
+.map-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  background: white;
+  border: 1px solid #dcecea;
+  border-radius: 30px;
+  color: #52716c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #159b8b;
+  box-shadow: 0 0 0 5px #dff6f2;
+}
+
+/* ==========================================
+   HOSPITAL MAP
+========================================== */
+
+.hospital-map {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #d5e8e5;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(24, 90, 83, 0.09);
+}
+
+/* ==========================================
+   MAP BUILDING HEADER
+========================================== */
+
+.map-building-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #123f3d;
+  color: white;
+}
+
+.building-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.floor-label {
+  padding: 7px 13px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+}
+
+/* ==========================================
+   MAP BODY
+========================================== */
+
+.map-body {
+  min-height: 480px;
+  padding: 40px 35px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 25px;
+  background:
+    linear-gradient(90deg, rgba(21, 155, 139, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(21, 155, 139, 0.035) 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+/* ==========================================
+   MAP SIDES
+========================================== */
+
+.map-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.map-room {
+  padding: 20px 15px;
+  text-align: center;
+  border: 1px solid #dcecea;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #5c7470;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.map-room span {
+  display: block;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.room-small {
+  min-height: 95px;
+}
+
+.room-highlight {
+  border-color: #a7dcd5;
+  background: #edf9f7;
+}
+
+/* ==========================================
+   CENTRAL MAP ROUTE
+========================================== */
+
+.map-route {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  margin: auto;
+  padding: 5px 0;
+}
+
+/* ==========================================
+   MAP NODE
+========================================== */
+
+.map-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border: 2px solid #d9e9e6;
+  border-radius: 17px;
+  transition: 0.4s ease;
+}
+
+.node-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #eff8f7;
+  font-size: 25px;
+}
+
+.node-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.node-text strong {
+  color: #173f3c;
+  font-size: 15px;
+}
+
+.node-text span {
+  color: #78908c;
+  font-size: 12px;
+}
+
+/* ==========================================
+   ACTIVE MAP NODE
+========================================== */
+
+.map-node.active {
+  border-color: #159b8b;
+  background: #edfaf7;
+  transform: scale(1.025);
+  box-shadow: 0 10px 25px rgba(21, 155, 139, 0.14);
+}
+
+.map-node.active .node-icon {
+  background: #159b8b;
+}
+
+.map-node.active .node-icon {
+  animation: nodePulse 1.5s infinite;
+}
+
+/* ==========================================
+   DESTINATION NODE
+========================================== */
+
+.destination-node {
+  border-color: #b8dcd7;
+  background: #f5fbfa;
+}
+
+.destination-node.active {
+  border-color: #159b8b;
+  background: #e8f8f5;
+}
+
+.destination-node .node-icon {
+  background: #dff5f1;
+}
+
+/* ==========================================
+   MAP ROUTE LINE
+========================================== */
+
+.map-line {
+  width: 5px;
+  height: 45px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #d8ebe8;
+}
+
+.map-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: #159b8b;
+  animation: routeFlow 2s linear infinite;
+}
+
+/* ==========================================
+   MAP FOOTER
+========================================== */
+
+.map-footer {
+  padding: 17px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e3efed;
+  background: #fbfefe;
+}
+
+.map-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #607874;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.legend-dot.start {
+  background: #7b9a95;
+}
+
+.legend-dot.route {
+  background: #159b8b;
+}
+
+.legend-dot.destination {
+  background: #e46c58;
+}
+
+.map-info {
+  color: #159b8b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   ROUTE INSTRUCTION
+========================================== */
+
+.route-instruction-card {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  background: #eaf8f5;
+  border: 1px solid #cce8e3;
+  border-radius: 18px;
+}
+
+.instruction-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: white;
+  border-radius: 14px;
+  font-size: 25px;
+}
+
+.route-instruction-card h3 {
+  color: #173f3c;
+  margin: 2px 0;
+}
+
+.route-instruction-card p {
+  color: #58716d;
+  font-size: 14px;
+}
+
+/* ==========================================
+   ROUTE CARD
+========================================== */
+
+.route-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border: 1px solid #dcecea;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(25, 90, 84, 0.07);
+}
+
+.route-card-header h2 {
+  color: #173f3c;
+  margin-top: 3px;
+}
+
+/* ==========================================
+   ROUTE PATH
+========================================== */
+
+.route-path {
+  position: relative;
+  margin: 30px 0;
+}
+
+.route-path::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  background: #d9e9e6;
+}
+
+.route-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 0;
+}
+
+.route-dot {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #d3e6e2;
+  color: #66817c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.route-step.active .route-dot {
+  background: #159b8b;
+  border-color: #159b8b;
+  color: white;
+  box-shadow: 0 0 0 6px #dff5f1;
+}
+
+.route-step.arrival .route-dot {
+  background: #e46c58;
+  border-color: #e46c58;
+  color: white;
+  box-shadow: 0 0 0 6px #fde9e5;
+}
+
+.route-title {
+  display: block;
+  color: #173f3c;
+}
+
+.route-subtitle {
+  display: block;
+  color: #7a8f8c;
+  font-size: 13px;
+}
+
+.arrival-btn {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  background: #159b8b;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.arrival-btn:hover {
+  background: #087e72;
+}
+
+/* ==========================================
+   CLOSE NAVIGATION
+========================================== */
+
+.close-navigation-btn {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 18px;
+  border: 1px solid #cfe2df;
+  background: white;
+  color: #376762;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   NOTIFICATION
+========================================== */
+
+.notification {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 5000;
+  max-width: 350px;
+  padding: 15px 20px;
+  background: #173f3c;
+  color: white;
+  border-radius: 13px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(130px);
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  padding: 45px 7%;
+  text-align: center;
+  background: #123f3d;
+  color: white;
+}
+
+.footer-logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+footer p {
+  margin: 8px 0;
+  color: #b9d4d0;
+}
+
+footer span {
+  color: #89aaa5;
+  font-size: 12px;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nodePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(21, 155, 139, 0.35);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(21, 155, 139, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(21, 155, 139, 0);
+  }
+}
+
+@keyframes routeFlow {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-body {
+    grid-template-columns: 1fr;
+  }
+
+  .map-side {
+    display: none;
+  }
+
+  .map-route {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 75px 5%;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .search-box input {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .steps-container,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-section,
+  .services-section {
+    padding: 65px 5%;
+  }
+
+  .accessibility-content,
+  .lost-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation-screen {
+    padding: 30px 5% 60px;
+  }
+
+  .navigation-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navigation-header h2 {
+    font-size: 26px;
+  }
+
+  .destination-summary {
+    flex-wrap: wrap;
+  }
+
+  .walking-time {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid #e5eeee;
+  }
+
+  .map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .map-body {
+    padding: 30px 18px;
+    min-height: 400px;
+  }
+
+  .map-building-header {
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .map-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .route-card {
+    padding: 22px;
+  }
+}

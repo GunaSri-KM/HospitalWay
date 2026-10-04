@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HospitalWay | Smart Hospital Navigation</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <nav class="navbar">
+      <div class="logo">🏥 Hospital<span>Way</span></div>
+
+      <div class="nav-links">
+        <a href="#home"> Home </a>
+
+        <a href="#how-it-works"> How It Works </a>
+
+        <a href="#services"> Services </a>
+      </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO / HOME
+    =========================================== -->
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="hero-badge"> 🧭 Smart Indoor Hospital Navigation </span>
+
+        <h1>
+          Find Your Way<br />
+          <span>Without Getting Lost.</span>
+        </h1>
+
+        <p>
+          HospitalWay helps patients and visitors quickly find hospital
+          departments, rooms and essential services.
+        </p>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+          <span class="search-icon"> 🔍 </span>
+
+          <input
+            type="text"
+            id="destinationInput"
+            placeholder="Search destination... e.g. Pharmacy"
+            autocomplete="off"
+          />
+
+          <button onclick="searchDestination()">Search</button>
+        </div>
+
+        <!-- SEARCH RESULTS -->
+
+        <div id="searchResult" class="search-result"></div>
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+          <button class="primary-btn" onclick="startNavigation()">
+            🧭 Find My Way
+          </button>
+
+          <button class="secondary-btn" onclick="showEmergency()">
+            🚨 Emergency
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         HOW IT WORKS
+    =========================================== -->
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading">
+        <span> SIMPLE & FAST </span>
+
+        <h2>How HospitalWay Works</h2>
+
+        <p>Finding a destination inside a hospital should not be stressful.</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="info-step">
+          <div class="step-number">01</div>
+
+          <div class="step-icon">🔍</div>
+
+          <h3>Search</h3>
+
+          <p>Search for a department, room or hospital service.</p>
+        </div>
+
+        <div class="info-step">
+          <div class="step-number">02</div>
+
+          <div class="step-icon">📍</div>
+
+          <h3>Select</h3>
+
+          <p>View the floor and room information of your destination.</p>
+        </div>
+
+        <div class="info-step">
+          <div class="step-number">03</div>
+
+          <div class="step-icon">🧭</div>
+
+          <h3>Navigate</h3>
+
+          <p>Follow the visual route to reach your destination.</p>
+        </div>
+
+        <div class="info-step">
+          <div class="step-number">04</div>
+
+          <div class="step-icon">🎯</div>
+
+          <h3>Arrive</h3>
+
+          <p>Reach your destination safely and confidently.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES
+    =========================================== -->
+
+    <section class="services-section" id="services">
+      <div class="section-heading">
+        <span> QUICK ACCESS </span>
+
+        <h2>Hospital Services</h2>
+
+        <p>Quickly find frequently visited hospital locations.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" onclick="searchService('Emergency')">
+          <div class="service-icon">🚨</div>
+
+          <h3>Emergency</h3>
+
+          <p>Emergency Department</p>
+        </div>
+
+        <div class="service-card" onclick="searchService('Laboratory')">
+          <div class="service-icon">🧪</div>
+
+          <h3>Laboratory</h3>
+
+          <p>Blood and diagnostic tests</p>
+        </div>
+
+        <div class="service-card" onclick="searchService('Pharmacy')">
+          <div class="service-icon">💊</div>
+
+          <h3>Pharmacy</h3>
+
+          <p>Medicine and pharmacy counter</p>
+        </div>
+
+        <div class="service-card" onclick="searchService('Restroom')">
+          <div class="service-icon">🚻</div>
+
+          <h3>Restroom</h3>
+
+          <p>Nearby restroom facilities</p>
+        </div>
+
+        <div class="service-card" onclick="searchService('Lift')">
+          <div class="service-icon">🛗</div>
+
+          <h3>Lift</h3>
+
+          <p>Floor-to-floor access</p>
+        </div>
+
+        <div class="service-card" onclick="searchService('Billing')">
+          <div class="service-icon">💳</div>
+
+          <h3>Billing</h3>
+
+          <p>Billing and payment counter</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ACCESSIBILITY
+    =========================================== -->
+
+    <section class="accessibility-section">
+      <div class="accessibility-content">
+        <div class="accessibility-icon">♿</div>
+
+        <div>
+          <span> ACCESSIBILITY SUPPORT </span>
+
+          <h2>Need an Accessible Route?</h2>
+
+          <p>
+            HospitalWay can guide visitors towards accessible hospital
+            facilities.
+          </p>
+        </div>
+
+        <button onclick="showAccessibility()">Find Accessible Route</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LOST HELP
+    =========================================== -->
+
+    <section class="lost-section">
+      <div class="lost-content">
+        <div>
+          <span> NEED HELP? </span>
+
+          <h2>Lost inside the hospital?</h2>
+
+          <p>Don't worry. HospitalWay can help you find the right direction.</p>
+        </div>
+
+        <button onclick="showLostHelp()">🧭 Get Help</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         NAVIGATION SCREEN
+    =========================================== -->
+
+    <section id="navigationScreen" class="navigation-screen">
+      <!-- NAVIGATION HEADER -->
+
+      <div class="navigation-header">
+        <button class="back-btn" onclick="closeNavigation()">← Back</button>
+
+        <div>
+          <span> HOSPITALWAY NAVIGATION </span>
+
+          <h2 id="navigationTitle">Navigate to Destination</h2>
+        </div>
+      </div>
+
+      <!-- DESTINATION SUMMARY -->
+
+      <div class="destination-summary">
+        <div class="destination-icon">📍</div>
+
+        <div>
+          <h3 id="destinationName">Destination</h3>
+
+          <p id="destinationLocation">Floor • Room</p>
+        </div>
+
+        <div class="walking-time">
+          <span> WALKING TIME </span>
+
+          <strong id="walkingTime"> 2 min </strong>
+        </div>
+      </div>
+
+      <!-- ==========================================
+             VISUAL HOSPITAL MAP
+        =========================================== -->
+
+      <div class="hospital-map-section">
+        <div class="map-heading">
+          <div>
+            <span> LIVE ROUTE MAP </span>
+
+            <h2>Your Hospital Route</h2>
+          </div>
+
+          <div class="map-status">
+            <span class="status-dot"></span>
+
+            Route Ready
+          </div>
+        </div>
+
+        <div class="hospital-map">
+          <!-- BUILDING HEADER -->
+
+          <div class="map-building-header">
+            <div class="building-label">🏥 MAIN HOSPITAL BUILDING</div>
+
+            <div class="floor-label">
+              <span id="mapFloor"> Ground Floor </span>
+            </div>
+          </div>
+
+          <!-- MAP BODY -->
+
+          <div class="map-body">
+            <!-- LEFT SIDE -->
+
+            <div class="map-side left-side">
+              <div class="map-room room-small">
+                <span> 🚻 </span>
+
+                Restroom
+              </div>
+
+              <div class="map-room room-small">
+                <span> 💧 </span>
+
+                Water
+              </div>
+            </div>
+
+            <!-- CENTRAL ROUTE -->
+
+            <div class="map-route">
+              <div class="map-node start-node" id="mapStart">
+                <div class="node-icon">🏥</div>
+
+                <div class="node-text">
+                  <strong> Main Entrance </strong>
+
+                  <span> Start </span>
+                </div>
+              </div>
+
+              <div class="map-line"></div>
+
+              <div class="map-node" id="mapReception">
+                <div class="node-icon">🛎️</div>
+
+                <div class="node-text">
+                  <strong> Reception </strong>
+
+                  <span> Information Desk </span>
+                </div>
+              </div>
+
+              <div class="map-line"></div>
+
+              <div class="map-node" id="mapLift">
+                <div class="node-icon">🛗</div>
+
+                <div class="node-text">
+                  <strong> Lift </strong>
+
+                  <span id="mapLiftText"> Ground Floor </span>
+                </div>
+              </div>
+
+              <div class="map-line"></div>
+
+              <div class="map-node destination-node" id="mapDestination">
+                <div class="node-icon">🎯</div>
+
+                <div class="node-text">
+                  <strong id="mapDestinationName"> Destination </strong>
+
+                  <span id="mapDestinationRoom"> Room </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="map-side right-side">
+              <div class="map-room room-highlight">
+                <span> 🧑‍⚕️ </span>
+
+                Staff Area
+              </div>
+
+              <div class="map-room room-small">
+                <span> 🚪 </span>
+
+                Exit
+              </div>
+            </div>
+          </div>
+
+          <!-- MAP FOOTER -->
+
+          <div class="map-footer">
+            <div class="map-legend">
+              <span>
+                <i class="legend-dot start"></i>
+                Start
+              </span>
+
+              <span>
+                <i class="legend-dot route"></i>
+                Route
+              </span>
+
+              <span>
+                <i class="legend-dot destination"></i>
+                Destination
+              </span>
+            </div>
+
+            <div class="map-info">🧭 Follow the highlighted route</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+             ROUTE INSTRUCTION
+        =========================================== -->
+
+      <div class="route-instruction-card">
+        <div class="instruction-icon">🧭</div>
+
+        <div>
+          <span> CURRENT ROUTE </span>
+
+          <h3 id="routeDestination">Destination</h3>
+
+          <p id="routeInstruction">Follow the route shown above.</p>
+        </div>
+      </div>
+
+      <!-- ==========================================
+             STEP ROUTE
+        =========================================== -->
+
+      <div class="route-card">
+        <div class="route-card-header">
+          <div>
+            <span> STEP-BY-STEP </span>
+
+            <h2>Navigation Steps</h2>
+          </div>
+        </div>
+
+        <div class="route-path">
+          <div class="route-step">
+            <div class="route-dot">1</div>
+
+            <div>
+              <strong class="route-title"> Main Entrance </strong>
+
+              <span class="route-subtitle"> Start here </span>
+            </div>
+          </div>
+
+          <div class="route-step">
+            <div class="route-dot">2</div>
+
+            <div>
+              <strong class="route-title"> Reception </strong>
+
+              <span class="route-subtitle"> Follow hospital signs </span>
+            </div>
+          </div>
+
+          <div class="route-step">
+            <div class="route-dot">3</div>
+
+            <div>
+              <strong class="route-title"> Destination </strong>
+
+              <span class="route-subtitle"> Follow the route </span>
+            </div>
+          </div>
+
+          <div class="route-step">
+            <div class="route-dot">4</div>
+
+            <div>
+              <strong class="route-title"> Arrive </strong>
+
+              <span class="route-subtitle"> You have arrived </span>
+            </div>
+          </div>
+        </div>
+
+        <button class="arrival-btn" onclick="showArrival()">
+          🎉 I've Arrived
+        </button>
+      </div>
+
+      <!-- CLOSE NAVIGATION -->
+
+      <button class="close-navigation-btn" onclick="closeNavigation()">
+        ← Back to HospitalWay
+      </button>
+    </section>
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div id="notification" class="notification"></div>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+      <div class="footer-logo">🏥 HospitalWay</div>
+
+      <p>Smart Indoor Hospital Navigation & Assistance System</p>
+
+      <span> Built with HTML • CSS • JavaScript • Flask • SQLite </span>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
