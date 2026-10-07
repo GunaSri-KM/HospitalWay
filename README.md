@@ -4,9 +4,6 @@ HospitalWay is a smart indoor hospital navigation and assistance system designed
 
 The system provides destination search, interactive route guidance, floor-aware navigation, and visual hospital map assistance to make hospital navigation simpler and more accessible.
 
-## 🌐 Live Demo
-https://gunasri-km.github.io/HospitalWay/
-
 ## ✨ Key Features
 
 - 🔎 Smart destination search
